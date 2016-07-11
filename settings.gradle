@@ -1,1 +1,1 @@
-include ':app', ':picselecttest'
+include ':app', ':picselecttest', ':designmodetest'
