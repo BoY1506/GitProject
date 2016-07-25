@@ -5,4 +5,27 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!--dialog样式-->
+    <style name="DialogStyle" parent="@android:style/Theme.Dialog">
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+    </style>
+
+    <!--dialog动画-->
+    <style name="DialogAnim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_dialog_out</item>
+    </style>
+
+    <!--popWindow动画-->
+    <style name="PopWindowAnim">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_show</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_hide</item>
+    </style>
+
 </resources>

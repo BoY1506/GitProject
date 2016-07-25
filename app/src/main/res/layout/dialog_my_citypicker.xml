@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_dialog_header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <com.zhou.gitproject.multipicker.view.ScrollerNumberPicker
+            android:id="@+id/citypicker_province"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            cp:itemNumber="3"
+            cp:lineColor="#ff6000"
+            cp:maskHight="32dp"
+            cp:noEmpty="true"
+            cp:normalTextColor="#777"
+            cp:normalTextSize="14sp"
+            cp:selecredTextColor="#000000"
+            cp:selecredTextSize="20sp"
+            cp:unitHight="50dp" />
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <com.zhou.gitproject.multipicker.view.ScrollerNumberPicker
+            android:id="@+id/citypicker_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            cp:itemNumber="3"
+            cp:lineColor="#ff6000"
+            cp:maskHight="32dp"
+            cp:noEmpty="true"
+            cp:normalTextColor="#777"
+            cp:normalTextSize="14sp"
+            cp:selecredTextColor="#000000"
+            cp:selecredTextSize="20sp"
+            cp:unitHight="50dp" />
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <com.zhou.gitproject.multipicker.view.ScrollerNumberPicker
+            android:id="@+id/citypicker_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            cp:itemNumber="3"
+            cp:lineColor="#ff6000"
+            cp:maskHight="32dp"
+            cp:noEmpty="true"
+            cp:normalTextColor="#777"
+            cp:normalTextSize="14sp"
+            cp:selecredTextColor="#000000"
+            cp:selecredTextSize="20sp"
+            cp:unitHight="50dp" />
+
+    </LinearLayout>
+</LinearLayout>

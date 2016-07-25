@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_dialog_header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <com.zhou.gitproject.multipicker.view.ScrollerNumberPicker
+            android:id="@+id/conspicker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            cp:itemNumber="3"
+            cp:lineColor="#ff6000"
+            cp:maskHight="32dp"
+            cp:noEmpty="true"
+            cp:normalTextColor="#777"
+            cp:normalTextSize="14sp"
+            cp:selecredTextColor="#000000"
+            cp:selecredTextSize="20sp"
+            cp:unitHight="50dp" />
+
+    </LinearLayout>
+</LinearLayout>

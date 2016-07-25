@@ -1,7 +1,9 @@
 package com.zhou.picselecttest.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,7 +57,7 @@ public class PicGridViewAdapter extends BaseAdapter {
      * getView方法会打印多次
      */
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_pics_gv, null);
@@ -80,6 +82,20 @@ public class PicGridViewAdapter extends BaseAdapter {
             viewHolder.picIv.setImageResource(R.mipmap.add_pic_icon);
             viewHolder.picDeleteIv.setVisibility(View.GONE);
         }
+        viewHolder.picDeleteIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(context)
+                        .setMessage("确认删除图片？")
+                        .setNegativeButton("取消", null)
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                subPic(position);
+                            }
+                        }).create().show();
+            }
+        });
         return convertView;
     }
 

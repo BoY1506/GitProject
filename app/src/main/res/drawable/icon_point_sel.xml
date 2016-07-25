@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><!--图片轮播导航点选择器-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@mipmap/shuf_point_sel" android:state_enabled="true" />
+    <item android:drawable="@mipmap/shuf_point_unsel" android:state_enabled="false" />
+</selector>

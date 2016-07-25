@@ -2,15 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhou.gitproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +23,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MsgTest" />
-        <activity android:name=".activity.StatusBarTest" />
+        <activity android:name=".statusbar.StatusBarTest" />
+        <activity android:name=".smscode.SmsCodeTest" />
+        <activity android:name=".retrofit.RetrofitTest" />
+        <activity android:name=".multipicker.MultiPickerTest" />
+        <activity android:name=".picselect.PicSelectTest" />
+        <activity android:name=".picselect.FilePicGallery" />
+        <activity android:name=".popfilter.PopFilterTest" />
+        <activity android:name=".popfilter.my.MyPopFilter" />
+        <activity android:name=".refreshlistview.RefreshListViewTest" />
+        <activity android:name=".refreshlistview.ultralv.UltraLvTest" />
+        <activity android:name=".refreshlistview.mylv.MyUltraLvTest" />
+        <activity android:name=".refreshlistview.swipelv.SwipeLvTest" />
+        <activity android:name=".circleimageview.CircleIvTest" />
+        <activity android:name=".shufbanner.ShufBannerTest" />
     </application>
 
 </manifest>
