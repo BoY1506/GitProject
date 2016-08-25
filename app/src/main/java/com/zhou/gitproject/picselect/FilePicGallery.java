@@ -1,11 +1,11 @@
 package com.zhou.gitproject.picselect;
 
+import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.widget.TextView;
 
-import com.zhou.gitproject.BaseActivity;
 import com.zhou.gitproject.R;
 import com.zhou.gitproject.picselect.adapter.FilePicGalleryAdapter;
 import com.zhou.gitproject.picselect.view.HackyViewPager;
@@ -20,7 +20,7 @@ import butterknife.InjectView;
  * 显示图片浏览的界面(file类型，传图片uri)
  * Created by zhou on 2016/7/18.
  */
-public class FilePicGallery extends BaseActivity implements ViewPager.OnPageChangeListener {
+public class FilePicGallery extends Activity implements ViewPager.OnPageChangeListener {
 
     @InjectView(R.id.gallery_pager)
     HackyViewPager galleryPager;

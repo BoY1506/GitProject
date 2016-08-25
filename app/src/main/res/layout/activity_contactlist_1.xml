@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/_white">
+
+    <com.zhou.gitproject.contactlist.view.PinnedSectionListView
+        android:id="@+id/contact_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--右侧栏导航list-->
+    <com.zhou.gitproject.contactlist.view.LetterBar
+        android:id="@+id/letter_list"
+        android:layout_width="22dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true" />
+
+    <!--悬浮pop提示框-->
+    <TextView
+        android:id="@+id/letter_overlay"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="#ff6600"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@color/_white"
+        android:textSize="52sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

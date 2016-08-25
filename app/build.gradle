@@ -1,15 +1,17 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'//添加apt命令
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "23.0.0 rc3"
-
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
     defaultConfig {
         applicationId "com.zhou.gitproject"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
     }
     buildTypes {
         release {
@@ -17,11 +19,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    //support
+    compile 'com.android.support:support-v4:24.1.1'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support:design:24.1.1'
+    compile 'com.android.support:recyclerview-v7:24.1.1'
+    //butter依赖注入
     compile 'com.jakewharton:butterknife:5.1.1'
     //okhttp依赖
     compile 'com.squareup.okhttp3:okhttp:3.3.1'
@@ -42,5 +51,19 @@ dependencies {
     compile 'io.reactivex:rxjava:1.0.14'
     //UItraRefreshListView依赖
     compile 'in.srain.cube:ultra-ptr:1.0.11'
+    //图片加载imageloader
     compile files('libs/universal-image-loader-1.9.4-with-sources.jar')
+    //Dragger2相关依赖
+    //指定注解处理器
+    apt 'com.google.dagger:dagger-compiler:2.0.2'
+    //dagger公用api
+    compile 'com.google.dagger:dagger:2.0.2'
+    //添加android缺失的部分javax注解
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    //zxing依赖包
+    compile files('libs/zxing.jar')
+    compile files('libs/pinyin4android1.0.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
+    ///百度地图依赖包
+    compile files('libs/BaiduLBS_Android.jar')
 }

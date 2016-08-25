@@ -14,6 +14,7 @@ import com.zhou.gitproject.R;
 import com.zhou.gitproject.multipicker.utils.AssetsUtils;
 import com.zhou.gitproject.multipicker.view.MyCityPickerDialog;
 import com.zhou.gitproject.multipicker.view.MyConsPickerDialog;
+import com.zhou.gitproject.utils.ActionBarBuilder;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -81,6 +82,11 @@ public class MultiPickerTest extends BaseActivity {
         setContentView(R.layout.activity_multipicker_test);
         ButterKnife.inject(this);
         initPickerDialog();
+    }
+
+    @Override
+    public void initActionBar(ActionBarBuilder builder) {
+        builder.hideActionBar();
     }
 
     /**
@@ -293,8 +299,8 @@ public class MultiPickerTest extends BaseActivity {
                 picker.setLineColor(Color.parseColor("#ff6600"));
                 picker.setOnAddressPickListener(new AddressPicker.OnAddressPickListener() {
                     @Override
-                    public void onAddressPicked(String province, String city, String county) {
-                        showToast(province + city + county);
+                    public void onAddressPicked(AddressPicker.Province province, AddressPicker.City city, AddressPicker.County county) {
+
                     }
                 });
                 picker.show();

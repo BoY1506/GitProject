@@ -9,6 +9,12 @@ import android.widget.Toast;
  */
 public class ToastUtils {
 
+    private ToastUtils() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
+
+    //统一的Toast
     private static Toast mToast;
 
     /**

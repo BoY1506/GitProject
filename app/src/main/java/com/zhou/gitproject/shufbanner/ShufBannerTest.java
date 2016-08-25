@@ -1,10 +1,13 @@
 package com.zhou.gitproject.shufbanner;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.zhou.gitproject.BaseActivity;
 import com.zhou.gitproject.R;
 import com.zhou.gitproject.shufbanner.view.ShufBanner;
+import com.zhou.gitproject.statusbar.utils.StatusBarUtils;
+import com.zhou.gitproject.utils.ActionBarBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +30,13 @@ public class ShufBannerTest extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shufbanner_test);
         ButterKnife.inject(this);
+        StatusBarUtils.setColor(this, Color.parseColor("#ff6600"));
         initView();
+    }
+
+    @Override
+    public void initActionBar(ActionBarBuilder builder) {
+        builder.setAcBarLeftImg().setAcBarBigText("图片轮播");
     }
 
     private void initView() {

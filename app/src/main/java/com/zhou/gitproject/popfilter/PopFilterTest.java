@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import com.zhou.gitproject.BaseActivity;
 import com.zhou.gitproject.R;
-import com.zhou.gitproject.popfilter.my.MyPopFilter;
+import com.zhou.gitproject.utils.ActionBarBuilder;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -21,8 +21,6 @@ public class PopFilterTest extends BaseActivity {
 
     @InjectView(R.id.bt1)
     Button bt1;
-    @InjectView(R.id.bt2)
-    Button bt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +29,17 @@ public class PopFilterTest extends BaseActivity {
         ButterKnife.inject(this);
     }
 
-    @OnClick({R.id.bt1, R.id.bt2})
+    @Override
+    public void initActionBar(ActionBarBuilder builder) {
+      builder.hideActionBar();
+    }
+
+    @OnClick({R.id.bt1})
     public void onClick(View view) {
         Intent intent = null;
         switch (view.getId()) {
             case R.id.bt1:
                 intent = new Intent(PopFilterTest.this, MyPopFilter.class);
-                break;
-            case R.id.bt2:
                 break;
         }
         startActivity(intent);

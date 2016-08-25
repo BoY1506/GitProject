@@ -158,6 +158,8 @@ public class MyRefreshLayout extends RelativeLayout implements SwipeRefreshLayou
     public void setAdapter(BaseAdapter adapter) {
         this.listAdapter = adapter;
         this.listView.setAdapter(listAdapter);
+        //初始化空数据(依赖于是否设置了adapter)
+        refreshComplete(0, true);
     }
 
     /**
@@ -165,6 +167,13 @@ public class MyRefreshLayout extends RelativeLayout implements SwipeRefreshLayou
      */
     public void setOnLvItemClickListener(AdapterView.OnItemClickListener listener) {
         this.listView.setOnItemClickListener(listener);
+    }
+
+    /**
+     * 设置refreshLayout颜色
+     */
+    public void setRefreshLayoutColor(int... colors) {
+        refreshLayout.setColorSchemeColors(colors);
     }
 
     /**
@@ -213,6 +222,8 @@ public class MyRefreshLayout extends RelativeLayout implements SwipeRefreshLayou
             page = 1;
             //开始请求数据
             isLoadData = true;
+            //设置refreshLayout刷新
+            refreshLayout.setRefreshing(true);
             refreshListener.onRefresh(page);
         }
     }

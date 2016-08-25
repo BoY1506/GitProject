@@ -17,6 +17,7 @@ import com.zhou.gitproject.R;
 import com.zhou.gitproject.smscode.reciver.SmsObserver;
 import com.zhou.gitproject.smscode.utils.TimeCounter;
 import com.zhou.gitproject.smscode.view.BtnWrapper;
+import com.zhou.gitproject.utils.ActionBarBuilder;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -68,6 +69,11 @@ public class SmsCodeTest extends BaseActivity {
         setContentView(R.layout.activity_smscode_test);
         ButterKnife.inject(this);
         initView();
+    }
+
+    @Override
+    public void initActionBar(ActionBarBuilder builder) {
+        builder.hideActionBar();
     }
 
     /**
@@ -133,4 +139,5 @@ public class SmsCodeTest extends BaseActivity {
 //        unregisterReceiver(msgReciver);
         getContentResolver().unregisterContentObserver(smsObserver);
     }
+
 }

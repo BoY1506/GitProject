@@ -1,75 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?><!--搜索筛选项titlebar-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="40dp"
+    android:layout_height="wrap_content"
     android:background="#FFFFFF"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/filter_bar_rl1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/filter_bar_tv1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="6dp"
-            android:drawableRight="@mipmap/filter_trigon_down"
-            android:text="第一项"
-            android:textSize="15sp" />
+        <RelativeLayout
+            android:id="@+id/filter_bar_rl1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/filter_bar_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="6dp"
+                android:drawableRight="@mipmap/filter_trigon_down"
+                android:text="第一项"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.4dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#DCDCDC" />
+
+        <RelativeLayout
+            android:id="@+id/filter_bar_rl2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/filter_bar_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="6dp"
+                android:drawableRight="@mipmap/filter_trigon_down"
+                android:text="第二项"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.4dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#DCDCDC" />
+
+        <RelativeLayout
+            android:id="@+id/filter_bar_rl3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/filter_bar_tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="6dp"
+                android:drawableRight="@mipmap/filter_trigon_down"
+                android:text="第三项"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
 
     <View
-        android:layout_width="0.4dp"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/filter_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
         android:background="#DCDCDC" />
 
-    <RelativeLayout
-        android:id="@+id/filter_bar_rl2"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/filter_bar_tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="6dp"
-            android:drawableRight="@mipmap/filter_trigon_down"
-            android:text="第二项"
-            android:textSize="15sp" />
-
-    </RelativeLayout>
-
-    <View
-        android:layout_width="0.4dp"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#DCDCDC" />
-
-    <RelativeLayout
-        android:id="@+id/filter_bar_rl3"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/filter_bar_tv3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="6dp"
-            android:drawableRight="@mipmap/filter_trigon_down"
-            android:text="第三项"
-            android:textSize="15sp" />
-
-    </RelativeLayout>
 </LinearLayout>

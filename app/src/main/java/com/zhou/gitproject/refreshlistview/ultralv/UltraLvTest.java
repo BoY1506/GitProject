@@ -6,6 +6,7 @@ import android.widget.FrameLayout;
 
 import com.zhou.gitproject.BaseActivity;
 import com.zhou.gitproject.R;
+import com.zhou.gitproject.utils.ActionBarBuilder;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -31,6 +32,11 @@ public class UltraLvTest extends BaseActivity {
         setContentView(R.layout.activity_ultralv_test);
         ButterKnife.inject(this);
         initView();
+    }
+
+    @Override
+    public void initActionBar(ActionBarBuilder builder) {
+        builder.hideActionBar();
     }
 
     /**

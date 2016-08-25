@@ -11,6 +11,7 @@ import com.zhou.gitproject.BaseActivity;
 import com.zhou.gitproject.R;
 import com.zhou.gitproject.picselect.adapter.PicAddAdapter;
 import com.zhou.gitproject.picselect.utils.PhotoUtils;
+import com.zhou.gitproject.utils.ActionBarBuilder;
 
 import java.util.ArrayList;
 
@@ -37,6 +38,11 @@ public class PicSelectTest extends BaseActivity {
         setContentView(R.layout.activity_picselect_test);
         ButterKnife.inject(this);
         initView();
+    }
+
+    @Override
+    public void initActionBar(ActionBarBuilder builder) {
+        builder.hideActionBar();
     }
 
     /**

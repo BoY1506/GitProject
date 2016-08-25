@@ -1,0 +1,68 @@
+为什么要开发规范：
+1.一个软件的生命周期中，80%的花费在于维护。
+2.几乎没有任何一个软件，在其整个生命周期中，均由最初的开发人员来维护 。
+3.编码规范可以改善软件的可读性，可以让程序员尽快而彻底地理解新的代码。
+
+开发规范的作用：
+1.减少维护花费
+2.提高可读性
+3.加快工作交接
+4.减少名字增生
+
+常量命名规范：
+1.全部为大写字母，中间以“_”连接，望文知意。
+例如：static final int MIN_SCREEN_WIDTH = 4；
+
+变量命名规范：
+1.首字母大写，java驼峰命名，望文知意原则。
+例如：static final int mMinScreenWidth = 4；
+
+方法命名规范：
+1.首字母小写，java驼峰命名，简单明了原则。
+例如：public static int getScreenWidth();
+
+类命名规范：
+1.首字母大写，java驼峰命名，望文知意原则，能够说明类的功能和主要作用（注释的作用）。
+2.Acitivity类以Acitivity结尾，Service类以Service结尾，BroadcastReceiver类以Receiver结尾，ContentProvider类以Provider结尾。
+3.Fragment类以Fragment结尾，Application类以Application结尾。
+4.自定义View类以Custom**View结尾，自定义Adapter类以Adapter结尾，adapter中的ViewHolder以Holder结尾。
+
+接口命名规范：
+1.首字母大写（第二个字母也是大写），java驼峰命名，望文知意原则，建议在名称前面追加“I”。
+例如：public interface IFunctionListener；
+
+包名规范：
+1.所有字母小写，简单明了，层级很深，没有拼接的包名，望文知意，按功能划分包名。
+
+布局文件名称规范：
+1.全部为小写字母，中间以"_"连接，望文知意原则，布局文件的开头问类名。
+2.Activity类的xml文件名称：activity_类名.xml，fragment类的xml文件名称：fragment_类名.xml。
+3.列表项的xml布局文件名称：item_类名.xml，自定义View的xml文件的名称：view_类名.xml。
+4.Dialog布局xml文件名称：dialog_类名.xml，PopupWindow布局xml文件明名称：pop_类型.xml。
+
+Drawable文件名称规范:
+1.全部为小写字母，中间以"_"连接，望文知意原则。
+例如：shape_white_bg；  sel_circle_btn。
+
+资源ID规范：
+1.全部为小写字母，中间以"_"连接，望文知意原则，以控件类型结尾。
+例如：user_name_tv；
+
+使用TODO注释：
+1.对那些临时性的、短期的、够棒但不完美的代码，请使用 TODO 注释。
+2.TODO 注释应该包含全部大写的 TODO，后跟一个冒号。
+// TODO: Change this to use a flag instead of a constant. 如果 TODO 注释是“将来要做某事”的格式）。
+
+
+
+
+
+
+
+
+
+
+
+
+
+

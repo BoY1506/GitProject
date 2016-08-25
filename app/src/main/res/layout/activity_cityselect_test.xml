@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF5F6F6"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/search_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_search_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/search_bar_icon" />
+
+        <ImageView
+            android:id="@+id/search_clear_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@mipmap/clear_icon"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/search_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@id/search_clear_icon"
+            android:layout_toRightOf="@id/search_icon"
+            android:background="@null"
+            android:hint="请输入城市名称"
+            android:maxLength="15"
+            android:textColor="#000001"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/city_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_rl"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent" />
+
+    <ListView
+        android:id="@+id/city_result_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_rl"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/city_result_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_rl"
+        android:padding="12dp"
+        android:text="抱歉，暂时没有找到相关城市，请修改后重试"
+        android:textColor="#000001"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <com.zhou.gitproject.cityselect2.view.LetterListView
+        android:id="@+id/letter_lv"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/search_rl" />
+
+    <TextView
+        android:id="@+id/overlay_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#80000000"
+        android:gravity="center"
+        android:minWidth="80dp"
+        android:padding="15dp"
+        android:text="A"
+        android:textColor="#ffffff"
+        android:textSize="52sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

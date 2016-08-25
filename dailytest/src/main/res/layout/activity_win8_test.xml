@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@mipmap/bkg_img_default"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.zhou.test.win8imitation.view.ScaleImageView
+                    android:id="@+id/c_joke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:scaleType="matrix"
+                    android:src="@mipmap/left_top" />
+
+                <com.zhou.test.win8imitation.view.ScaleImageView
+                    android:id="@+id/c_idea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="matrix"
+                    android:src="@mipmap/left_bottom" />
+            </LinearLayout>
+
+            <com.zhou.test.win8imitation.view.ScaleImageView
+                android:id="@+id/c_constellation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="matrix"
+                android:src="@mipmap/right" />
+        </LinearLayout>
+
+        <com.zhou.test.win8imitation.view.ScaleImageView
+            android:id="@+id/c_recommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:scaleType="matrix"
+            android:src="@mipmap/bottom" />
+    </LinearLayout>
+
+</LinearLayout>

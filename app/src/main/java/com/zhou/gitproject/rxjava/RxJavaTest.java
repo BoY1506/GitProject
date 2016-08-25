@@ -1,11 +1,10 @@
 package com.zhou.gitproject.rxjava;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.widget.ImageView;
-
-import com.zhou.gitproject.BaseActivity;
 
 import java.io.File;
 
@@ -28,7 +27,7 @@ import rx.schedulers.Schedulers;
  * RxJava的优势：异步、简洁、链式编程、对象转化
  * Created by zhou on 2016/7/19.
  */
-public class RxJavaTest extends BaseActivity {
+public class RxJavaTest extends Activity {
 
     /**
      * 读取文件夹里的图片显示到imageview上

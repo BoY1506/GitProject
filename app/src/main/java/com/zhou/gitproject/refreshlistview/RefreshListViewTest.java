@@ -10,6 +10,7 @@ import com.zhou.gitproject.R;
 import com.zhou.gitproject.refreshlistview.mylv.MyUltraLvTest;
 import com.zhou.gitproject.refreshlistview.swipelv.SwipeLvTest;
 import com.zhou.gitproject.refreshlistview.ultralv.UltraLvTest;
+import com.zhou.gitproject.utils.ActionBarBuilder;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -33,6 +34,11 @@ public class RefreshListViewTest extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_refreshlv_test);
         ButterKnife.inject(this);
+    }
+
+    @Override
+    public void initActionBar(ActionBarBuilder builder) {
+        builder.hideActionBar();
     }
 
     @OnClick({R.id.bt1, R.id.bt2, R.id.bt3})

@@ -3,6 +3,12 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <!--返回键样式-->
+        <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
+    </style>
+
+    <style name="AppTheme.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
     </style>
 
     <!--dialog样式-->
@@ -26,6 +32,36 @@
     <style name="PopWindowAnim">
         <item name="android:windowEnterAnimation">@anim/anim_pop_show</item>
         <item name="android:windowExitAnimation">@anim/anim_pop_hide</item>
+    </style>
+
+    <!--Dialog样式Activity主题-->
+    <style name="dialog_activity" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@android:color/transparent</item>
+        <!--边框-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--半透明-->
+        <item name="android:windowNoTitle">true</item>
+        <!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--背景透明-->
+        <item name="android:backgroundDimAmount">0.3</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!--横向分隔线样式-->
+    <style name="divide_line_hor">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.2dp</item>
+        <item name="android:background">#C8C8C8</item>
+    </style>
+
+    <!--垂直分隔线样式-->
+    <style name="divide_line_vel">
+        <item name="android:layout_width">0.2dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#ffdcdcdc</item>
     </style>
 
 </resources>

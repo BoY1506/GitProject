@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.zhou.gitproject.BaseActivity;
 import com.zhou.gitproject.R;
 import com.zhou.gitproject.statusbar.utils.StatusBarUtils;
+import com.zhou.gitproject.utils.ActionBarBuilder;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -32,8 +33,12 @@ public class StatusBarTest extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statusbar_test);
         ButterKnife.inject(this);
-        //在baseActivity中直接调用此方法即可
         StatusBarUtils.setColor4Drawlayout(this, mainLayout, Color.parseColor("#ff4c3b"));
+    }
+
+    @Override
+    public void initActionBar(ActionBarBuilder builder) {
+        builder.hideActionBar();
     }
 
 }

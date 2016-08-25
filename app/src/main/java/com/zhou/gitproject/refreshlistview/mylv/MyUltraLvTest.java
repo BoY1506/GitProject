@@ -7,6 +7,7 @@ import com.zhou.gitproject.BaseActivity;
 import com.zhou.gitproject.R;
 import com.zhou.gitproject.refreshlistview.mylv.view.MyUltraRefreshHeader;
 import com.zhou.gitproject.refreshlistview.mylv.view.MyUltraRefreshListView;
+import com.zhou.gitproject.utils.ActionBarBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,11 @@ public class MyUltraLvTest extends BaseActivity implements MyUltraRefreshListVie
         setContentView(R.layout.activity_myultralv_test);
         ButterKnife.inject(this);
         initView();
+    }
+
+    @Override
+    public void initActionBar(ActionBarBuilder builder) {
+        builder.hideActionBar();
     }
 
     /**

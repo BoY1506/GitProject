@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import com.zhou.gitproject.BaseActivity;
 import com.zhou.gitproject.R;
 import com.zhou.gitproject.refreshlistview.swipelv.view.MyRefreshLayout;
+import com.zhou.gitproject.utils.ActionBarBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,11 @@ public class SwipeLvTest extends BaseActivity implements MyRefreshLayout.LayoutR
         setContentView(R.layout.activity_swipelv_test);
         ButterKnife.inject(this);
         initView();
+    }
+
+    @Override
+    public void initActionBar(ActionBarBuilder builder) {
+        builder.hideActionBar();
     }
 
     /**

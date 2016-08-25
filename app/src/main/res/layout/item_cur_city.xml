@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="35dp">
+
+        <TextView
+            android:id="@+id/cur_city_hint_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="正在定位城市"
+            android:textColor="#FF000001"
+            android:textSize="17sp" />
+
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/cur_city_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_cur_city_bg"
+                android:gravity="center"
+                android:text="苏州"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/cur_city_rb"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/divide_line_hor"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+</LinearLayout>

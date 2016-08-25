@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><!--单项筛选列表项-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp">
+
+    <TextView
+        android:id="@+id/filter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:text="单项"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/filter_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@id/filter_tv"
+        android:src="@mipmap/filter_select_icon" />
+
+    <View style="@style/divide_line_hor" />
+
+</RelativeLayout>
