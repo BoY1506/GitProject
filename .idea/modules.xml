@@ -3,9 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GitProject.iml" filepath="$PROJECT_DIR$/GitProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rong_Cloud_Android_IMKit_SDK_v2_7_0_dev/Rong_Cloud_Android_IMKit_SDK_v2_7_0_dev.iml" filepath="$PROJECT_DIR$/Rong_Cloud_Android_IMKit_SDK_v2_7_0_dev/Rong_Cloud_Android_IMKit_SDK_v2_7_0_dev.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dailytest/dailytest.iml" filepath="$PROJECT_DIR$/dailytest/dailytest.iml" />
       <module fileurl="file://$PROJECT_DIR$/designmodetest/designmodetest.iml" filepath="$PROJECT_DIR$/designmodetest/designmodetest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mvpapp/mvpapp.iml" filepath="$PROJECT_DIR$/mvpapp/mvpapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rongcloudtest/rongcloudtest.iml" filepath="$PROJECT_DIR$/rongcloudtest/rongcloudtest.iml" />
     </modules>
   </component>
 </project>

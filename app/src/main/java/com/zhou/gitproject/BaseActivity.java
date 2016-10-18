@@ -3,7 +3,7 @@ package com.zhou.gitproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -18,7 +18,7 @@ import com.zhou.gitproject.utils.ToastUtils;
  * activity基类
  * Created by zhou on 2016/7/12.
  */
-public abstract class BaseActivity extends ActionBarActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     //activity引用
     protected Activity mContext;

@@ -9,9 +9,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Rong_Cloud_Android_IMKit_SDK_v2_7_0_dev" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/dailytest" />
             <option value="$PROJECT_DIR$/designmodetest" />
+            <option value="$PROJECT_DIR$/mvpapp" />
+            <option value="$PROJECT_DIR$/rongcloudtest" />
           </set>
         </option>
       </GradleProjectSettings>

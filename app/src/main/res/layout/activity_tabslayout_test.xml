@@ -9,11 +9,11 @@
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:tabTextAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
         app:tabBackground="@color/_background"
         app:tabIndicatorColor="#ff6600"
         app:tabIndicatorHeight="3dp"
         app:tabSelectedTextColor="#ff6600"
+        app:tabTextAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
         app:tabTextColor="#646464" />
 
     <android.support.v4.view.ViewPager

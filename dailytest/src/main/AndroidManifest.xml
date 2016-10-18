@@ -24,13 +24,15 @@
         </activity>
         <activity android:name=".win8imitation.Win8Test" />
         <activity android:name=".ormlite.ORMLiteTest" />
-        <activity android:name=".barcode.QRcodeTest" />
-        <activity
-            android:name=".barcode.zxing.activity.CaptureActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait"
-            android:theme="@style/dialog_activity"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-
+        <activity android:name=".charts.ChartsTest" />
+        <activity android:name=".charts.LineChartTest" />
+        <activity android:name=".charts.ColumnChartTest" />
+        <activity android:name=".charts.PieChartTest" />
+        <activity android:name=".couponview.CouponViewTest" />
+        <activity android:name=".qrbar.QRcodeTest" />
+        <activity android:name=".qrbar.MyLayoutUI" />
+        <activity android:name=".radarmap.RadarMapTest" />
+        <activity android:name=".circleprogress.CircleProgressTest" />
+        <activity android:name=".unreadmsg.UnReadMsgTest" />
     </application>
 </manifest>

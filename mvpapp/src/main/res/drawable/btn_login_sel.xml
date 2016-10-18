@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--橙色按圆角钮背景选择器-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- pressed -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <!-- 填充 -->
+            <solid android:color="#F55A00" />
+            <!-- 圆角-->
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+    <!-- unpressed -->
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <!-- 填充 -->
+            <solid android:color="#FF6600" />
+            <!-- 圆角-->
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+</selector>

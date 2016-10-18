@@ -1,7 +1,9 @@
 package com.zhou.gitproject.blurbitmap.utils;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
@@ -32,6 +34,7 @@ public class BlurBitmap {
      * @param image   需要模糊的图片
      * @return 模糊处理后的图片
      */
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     public static Bitmap blur(Context context, Bitmap image) {
 
         // 计算图片缩小后的长宽

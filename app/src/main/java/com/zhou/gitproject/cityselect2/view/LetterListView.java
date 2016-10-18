@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.zhou.gitproject.utils.UIUtils;
+
 /**
  * 右侧字母导航栏
  * Created by zhou on 2016/8/21.
@@ -44,7 +46,7 @@ public class LetterListView extends View {
     private void init() {
         paint = new Paint();
         paint.setColor(Color.parseColor("#000001"));
-        paint.setTextSize(36);
+        paint.setTextSize(UIUtils.dp2px(getContext(), 12f));
         paint.setAntiAlias(true);
         textBounds = new Rect();
     }

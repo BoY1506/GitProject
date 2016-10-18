@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?><!--统一titlebar样式-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mactionbar"
+    android:layout_width="match_parent"
+    android:layout_height="144px"
+    android:background="#ff6600">
+
+    <RelativeLayout
+        android:id="@+id/mactionbar_left_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/mactionbar_left_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="左标"
+            android:textColor="#ffffff"
+            android:textSize="42px"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/mactionbar_left_iv"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/back_icon"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/mactionbar_big_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大标题"
+            android:textColor="#ffffff"
+            android:textSize="60px" />
+
+        <TextView
+            android:id="@+id/mactionbar_small_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/mactionbar_big_tv"
+            android:layout_toRightOf="@id/mactionbar_big_tv"
+            android:text="小标题"
+            android:textColor="#ffffff"
+            android:textSize="48px"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mactionbar_rigth_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/mactionbar_right_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="右标"
+            android:textColor="#ffffff"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/mactionbar_right_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</RelativeLayout>

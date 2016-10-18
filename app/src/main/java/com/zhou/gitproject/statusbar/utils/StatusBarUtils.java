@@ -10,8 +10,9 @@ import android.widget.LinearLayout;
 
 /**
  * 沉浸式状态栏完美实现
- * 1，设置一个纯色，适配4.4并以上，需要处理5.0并以上的阴影效果
- * 2，当顶部是一个图片，上移到状态栏
+ * 注：Android5.x可直接设置getWindow().setStatusBarColor(color);
+ * 与在样式文件中设置colorPrimaryDark效果一致，只是在5.0以下的系统无效
+ * 因此工具类实际上可直接处理4.4~5.0之间的适配问题即可
  * Created by zhou on 2016/5/6.
  */
 public class StatusBarUtils {
@@ -23,21 +24,25 @@ public class StatusBarUtils {
      * @param color    设置的颜色（一般是titlebar的颜色）
      */
     public static void setColor(Activity activity, int color) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            //5.0及以上，不设置透明状态栏，设置会有半透明阴影
-            activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            //设置statusBar的背景色，5.0默认已经fitSystemWindow=true
-            activity.getWindow().setStatusBarColor(color);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            //4.4需要添加此flag
-            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            // 生成一个状态栏大小的矩形
-            View statusView = createStatusBarView(activity, color);
-            // 添加statusView到根布局中
-            ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
-            decorView.addView(statusView);
-            //设置fitSystemWindow=true
-            setRootView(activity);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            //大于4.4才设置
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //大于5.0
+                //5.0及以上，不设置透明状态栏，设置会有半透明阴影
+                activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                //设置statusBar的背景色，5.0默认已经fitSystemWindow=true
+                activity.getWindow().setStatusBarColor(color);
+            } else {
+                //4.4需要添加此flag
+                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                // 生成一个状态栏大小的矩形
+                View statusView = createStatusBarView(activity, color);
+                // 添加statusView到根布局中
+                ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
+                decorView.addView(statusView);
+                //设置fitSystemWindow=true
+                setRootView(activity);
+            }
         }
     }
 
@@ -48,22 +53,26 @@ public class StatusBarUtils {
      *
      * @param activity 需要设置的activity
      */
-    public static void setColor4Drawlayout(Activity activity, ViewGroup titlebar, int color) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            //5.0及以上，不设置透明状态栏，设置会有半透明阴影
-            activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            //这句作用等同于fitsSystemWindows=false，使状态栏和标题栏重合
-            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            //设置状态栏颜色透明
-            activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
-        } else {
-            //4.4，直接设置透明
-            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+    public static void setColor4Drawlayout(Activity activity, ViewGroup mainLayout, int color) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            //大于4.4才设置
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //大于5.0
+                //5.0及以上，不设置透明状态栏，设置会有半透明阴影
+                activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                //这句作用等同于fitsSystemWindows=false，使状态栏和标题栏重合
+                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+                //设置状态栏颜色透明
+                activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
+            } else {
+                //4.4，直接设置透明
+                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            }
+            // 生成一个状态栏大小的矩形（注意这里的View只作用于main_layout上）
+            View statusView = createStatusBarView(activity, color);
+            // 添加statusView到titlebar中
+            mainLayout.addView(statusView, 0);
         }
-        // 生成一个状态栏大小的矩形（注意这里的View只作用于main_layout上）
-        View statusView = createStatusBarView(activity, color);
-        // 添加 statusView到titlebar中
-        titlebar.addView(statusView, 0);
     }
 
     /**
@@ -73,16 +82,20 @@ public class StatusBarUtils {
      * @param activity
      */
     public static void setImageBackground(Activity activity) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            //5.0及以上，不设置透明状态栏，设置会有半透明阴影
-            activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            //使activity_main.xml中的图片可以沉浸到状态栏上
-            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            //设置状态栏颜色透明
-            activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
-        } else {
-            //直接设置透明
-            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            //大于4.4才设置
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //大于5.0
+                //5.0及以上，不设置透明状态栏，设置会有半透明阴影
+                activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                //使activity_main.xml中的图片可以沉浸到状态栏上
+                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+                //设置状态栏颜色透明
+                activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
+            } else {
+                //直接设置透明
+                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            }
         }
     }
 

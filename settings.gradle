@@ -1,1 +1,1 @@
-include ':app', ':designmodetest', ':dailytest'
+include ':app', ':designmodetest', ':dailytest', ':rongcloudtest', ':Rong_Cloud_Android_IMKit_SDK_v2_7_0_dev', ':mvpapp'
