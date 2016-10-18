@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--通用listView加载尾视图-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <ProgressBar
+            android:layout_width="60px"
+            android:layout_height="60px"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/loading_hint_tv"
+            style="@style/text_16sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:text="正在加载更多..."
+            android:textColor="#707070"
+            android:textSize="42px" />
+
+    </LinearLayout>
+</RelativeLayout>

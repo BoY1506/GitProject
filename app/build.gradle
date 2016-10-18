@@ -19,16 +19,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors {
-    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //support
-    compile 'com.android.support:support-v4:24.1.1'
-    compile 'com.android.support:appcompat-v7:24.1.1'
-    compile 'com.android.support:design:24.1.1'
+    compile 'com.android.support:support-v4:23.2.0'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile 'com.android.support:design:23.2.0'
     compile 'com.android.support:recyclerview-v7:24.1.1'
     //butter依赖注入
     compile 'com.jakewharton:butterknife:5.1.1'
@@ -51,6 +49,8 @@ dependencies {
     compile 'io.reactivex:rxjava:1.0.14'
     //UItraRefreshListView依赖
     compile 'in.srain.cube:ultra-ptr:1.0.11'
+    //图片裁剪框架
+//    compile 'com.yalantis:ucrop:2.2.0'
     //图片加载imageloader
     compile files('libs/universal-image-loader-1.9.4-with-sources.jar')
     //Dragger2相关依赖
@@ -66,4 +66,7 @@ dependencies {
     compile files('libs/pinyin4j-2.5.0.jar')
     ///百度地图依赖包
     compile files('libs/BaiduLBS_Android.jar')
+    //pdf阅读库
+//    compile 'com.github.barteksc:pdfium-android:1.4.0'
+    compile 'com.github.barteksc:android-pdf-viewer:2.1.0'
 }

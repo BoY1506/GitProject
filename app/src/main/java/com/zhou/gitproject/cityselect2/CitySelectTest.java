@@ -161,8 +161,6 @@ public class CitySelectTest extends BaseActivity {
         initLocation();
         //注册监听函数
         mLocationClient.registerLocationListener(myListener);
-        //开启定位器
-        mLocationClient.start();
         //当前城市点击事件
         adapter.setOnCurCityClickListener(new CityListAdapter.OnCurCityClickListener() {
             @Override
@@ -271,12 +269,16 @@ public class CitySelectTest extends BaseActivity {
         showToast(city.getName());
     }
 
-    /**
-     * 视图销毁解除注解bind
-     */
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onStart() {
+        super.onStart();
+        //开启定位器
+        mLocationClient.start();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
         //关闭地图定位
         mLocationClient.stop();
     }

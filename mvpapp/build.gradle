@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.zhou.mvpapp"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:24.2.0'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile 'com.android.support:design:23.2.0'
+    compile 'com.android.support:recyclerview-v7:23.2.0'
+    compile 'com.android.support:cardview-v7:23.2.0'
+    //注解依赖包
+    //    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.jakewharton:butterknife:5.1.1'
+    //屏幕适配包
+    compile 'com.zhy:autolayout:1.4.3'
+    //retrofit2.0网络请求包
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+    //图片加载包
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    //orm数据库包
+    compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
+    //recyclerView适配器包
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.1.2'
+}

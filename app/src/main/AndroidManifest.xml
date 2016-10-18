@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhou.gitproject">
 
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -59,8 +62,9 @@
         <activity android:name=".smscode.SmsCodeTest" />
         <activity android:name=".retrofit2.RetrofitTest" />
         <activity android:name=".multipicker.MultiPickerTest" />
-        <activity android:name=".picselect.PicSelectTest" />
-        <activity android:name=".picselect.FilePicGallery" />
+        <activity android:name=".pictest.PicTest" />
+        <activity android:name=".pictest.picselect.PicSelectTest" />
+        <activity android:name=".pictest.picselect.FilePicGallery" />
         <activity android:name=".popfilter.PopFilterTest" />
         <activity android:name=".popfilter.MyPopFilter" />
         <activity android:name=".refreshlistview.RefreshListViewTest" />
@@ -96,8 +100,16 @@
         <activity android:name=".materialdesign.MyNavicationTest" />
         <activity
             android:name=".cityselect2.CitySelectTest"
-            android:windowSoftInputMode="adjustPan" />/>
-
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".baidumap.BaiduMapTest" />
+        <activity android:name=".gesturelock.GestureLockTest" />
+        <activity android:name=".videoplay.VideoPlayTest" />
+        <activity android:name=".videoplay.videoviewplay.VideoViewPlayTest" />
+        <activity
+            android:name=".videoplay.universalvideoviewplay.UniversalVideoViewTest"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".pdfreader.PDFViewReader" />
+        <activity android:name=".pdfreader.PDFViewTest" />
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

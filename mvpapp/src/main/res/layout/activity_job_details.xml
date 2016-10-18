@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?><!--岗位详情界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_loading" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="24px"
+            android:text="职位信息"
+            android:textColor="@color/_black"
+            android:textSize="54px" />
+
+        <View style="@style/divide_line_hor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/_white"
+            android:orientation="vertical"
+            android:padding="36px">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="职位名称："
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/station_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人数要求："
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/station_people_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="工程名称："
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/station_pro_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="计划工期："
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/station_pro_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开工日期："
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/station_pro_starttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="工作地点："
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/station_pro_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系人："
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/station_linkman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60px"
+                    android:text="电话："
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/station_linkman_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+            </LinearLayout>
+
+            <com.zhou.mvpapp.widget.DashedLine
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginTop="24px" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="薪资："
+                    android:textColor="#FF6600"
+                    android:textSize="48px" />
+
+                <TextView
+                    android:id="@+id/station_day_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF6600"
+                    android:textSize="48px" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/released_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发布时间"
+                    android:textColor="@color/_black"
+                    android:textSize="36px" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/divide_line_hor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="24px"
+            android:text="职位描述"
+            android:textColor="@color/_black"
+            android:textSize="54px" />
+
+        <View style="@style/divide_line_hor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/_white"
+            android:orientation="vertical"
+            android:padding="36px">
+
+            <TextView
+                android:id="@+id/station_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="false"
+                android:text="职位描述..."
+                android:textColor="@color/_black"
+                android:textSize="42px" />
+
+        </LinearLayout>
+
+        <View style="@style/divide_line_hor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="24px"
+            android:text="企业信息"
+            android:textColor="@color/_black"
+            android:textSize="54px" />
+
+        <View style="@style/divide_line_hor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/_white"
+            android:orientation="vertical"
+            android:padding="36px">
+
+            <TextView
+                android:id="@+id/company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="人麦信息科技"
+                android:textColor="@color/_black"
+                android:textSize="48px" />
+
+            <com.zhou.mvpapp.widget.DashedLine
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_marginTop="24px" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="公司地址："
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/company_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="公司评分："
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/company_grade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF6600"
+                    android:textSize="48px" />
+
+                <TextView
+                    android:id="@+id/company_bargain_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12px"
+                    android:text="(招工次数)"
+                    android:textColor="@color/_black"
+                    android:textSize="42px" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/divide_line_hor" />
+
+    </LinearLayout>
+</LinearLayout>

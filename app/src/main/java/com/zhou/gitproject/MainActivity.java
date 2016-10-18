@@ -7,22 +7,26 @@ import android.view.View;
 import android.widget.Button;
 
 import com.zhou.gitproject.appsplash.SplashActivity;
+import com.zhou.gitproject.baidumap.BaiduMapTest;
 import com.zhou.gitproject.barcode.QRcodeTest;
 import com.zhou.gitproject.blurbitmap.BlurbitmapTest;
 import com.zhou.gitproject.circleimageview.CircleIvTest;
 import com.zhou.gitproject.cityselect2.CitySelectTest;
 import com.zhou.gitproject.contactlist.ContactListTest;
+import com.zhou.gitproject.gesturelock.GestureLockTest;
 import com.zhou.gitproject.listviewselall.ListViewSelAllTest;
 import com.zhou.gitproject.materialdesign.MaterialDesignTest;
 import com.zhou.gitproject.multipicker.MultiPickerTest;
 import com.zhou.gitproject.mydialog.FragmentDialogTest;
-import com.zhou.gitproject.picselect.PicSelectTest;
+import com.zhou.gitproject.pdfreader.PDFViewReader;
+import com.zhou.gitproject.pictest.PicTest;
 import com.zhou.gitproject.popfilter.PopFilterTest;
 import com.zhou.gitproject.refreshlistview.RefreshListViewTest;
 import com.zhou.gitproject.retrofit2.RetrofitTest;
 import com.zhou.gitproject.shufbanner.ShufBannerTest;
 import com.zhou.gitproject.smscode.SmsCodeTest;
 import com.zhou.gitproject.statusbar.StatusBarTest;
+import com.zhou.gitproject.videoplay.VideoPlayTest;
 import com.zhou.gitproject.viewpagerload.ViewPagerLoadTest;
 import com.zhou.gitproject.xmlparse.XMLParseTest;
 
@@ -74,6 +78,14 @@ public class MainActivity extends Activity {
     Button bt18;
     @InjectView(R.id.bt19)
     Button bt19;
+    @InjectView(R.id.bt20)
+    Button bt20;
+    @InjectView(R.id.bt21)
+    Button bt21;
+    @InjectView(R.id.bt22)
+    Button bt22;
+    @InjectView(R.id.bt23)
+    Button bt23;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +101,7 @@ public class MainActivity extends Activity {
      */
     @OnClick({R.id.bt1, R.id.bt2, R.id.bt3, R.id.bt4, R.id.bt5, R.id.bt6, R.id.bt7, R.id.bt8, R.id.bt9,
             R.id.bt10, R.id.bt11, R.id.bt12, R.id.bt13, R.id.bt14, R.id.bt15, R.id.bt16, R.id.bt17,
-            R.id.bt18, R.id.bt19})
+            R.id.bt18, R.id.bt19, R.id.bt20, R.id.bt21, R.id.bt22, R.id.bt23})
     public void onClick(View view) {
         Intent intent = null;
         switch (view.getId()) {
@@ -106,7 +118,7 @@ public class MainActivity extends Activity {
                 intent = new Intent(MainActivity.this, MultiPickerTest.class);
                 break;
             case R.id.bt5:
-                intent = new Intent(MainActivity.this, PicSelectTest.class);
+                intent = new Intent(MainActivity.this, PicTest.class);
                 break;
             case R.id.bt6:
                 intent = new Intent(MainActivity.this, PopFilterTest.class);
@@ -149,6 +161,18 @@ public class MainActivity extends Activity {
                 break;
             case R.id.bt19:
                 intent = new Intent(MainActivity.this, CitySelectTest.class);
+                break;
+            case R.id.bt20:
+                intent = new Intent(MainActivity.this, BaiduMapTest.class);
+                break;
+            case R.id.bt21:
+                intent = new Intent(MainActivity.this, GestureLockTest.class);
+                break;
+            case R.id.bt22:
+                intent = new Intent(MainActivity.this, VideoPlayTest.class);
+                break;
+            case R.id.bt23:
+                intent = new Intent(MainActivity.this, PDFViewReader.class);
                 break;
         }
         startActivity(intent);

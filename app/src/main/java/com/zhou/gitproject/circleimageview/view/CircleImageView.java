@@ -38,6 +38,9 @@ public class CircleImageView extends ImageView {
     private static final int DEFAULT_BORDER_COLOR = android.graphics.Color.parseColor("#000000");//边框默认黑色
     private static final int DEFAULT_ROUND_RADIUS = 20;//圆角大小默认20
 
+    private int mAddBorderRoundRadius;//加边框之后的圆角半径
+    private RectF mAddBorderRect = new RectF();//加边框之后的范围
+
     private final RectF mDrawableRect = new RectF();
     private final RectF mBorderRect = new RectF();
 
@@ -55,12 +58,10 @@ public class CircleImageView extends ImageView {
     private int mBitmapHeight;
 
     private float mDrawableRadius;
-    private float mBorderRadius;
+    private float mAddBorderRadius;
 
     private boolean mReady;
     private boolean mSetupPending;
-
-    private RectF roundRectF;
 
     public CircleImageView(Context context) {
         super(context);
@@ -102,22 +103,70 @@ public class CircleImageView extends ImageView {
         }
     }
 
+    private void setup() {
+        if (!mReady) {
+            mSetupPending = true;
+            return;
+        }
+        if (mBitmap == null) {
+            return;
+        }
+        mBitmapShader = new BitmapShader(mBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+
+        mBitmapPaint.setAntiAlias(true);
+        mBitmapPaint.setShader(mBitmapShader);
+
+        mBorderPaint.setStyle(Paint.Style.STROKE);
+        mBorderPaint.setAntiAlias(true);
+        mBorderPaint.setColor(mBorderColor);
+        mBorderPaint.setStrokeWidth(mBorderWidth);
+
+        mBitmapHeight = mBitmap.getHeight();
+        mBitmapWidth = mBitmap.getWidth();
+
+        //获取原始图片的范围
+        mBorderRect.set(0, 0, getWidth(), getHeight());
+        //主图片范围（原始图片-边框宽度）
+        mDrawableRect.set(mBorderWidth, mBorderWidth, mBorderRect.width() - mBorderWidth,
+                mBorderRect.height() - mBorderWidth);
+        //边框宽度最好设成偶数
+        if (type == TYPE_CIRCLE) {
+            //圆形
+            //边框半径
+            mAddBorderRadius = Math.min(mBorderRect.height() / 2, mBorderRect.width() / 2);
+            //主图片半径
+            mDrawableRadius = Math.min(mDrawableRect.height() / 2, mDrawableRect.width() / 2);
+        } else if (type == TYPE_ROUND) {
+            //圆角
+            //加边框范围：
+            mAddBorderRect.set(mBorderWidth / 2, mBorderWidth / 2,
+                    mBorderRect.width() - mBorderWidth / 2, mBorderRect.width() - mBorderWidth / 2);
+            //加边框的圆角半径
+            mAddBorderRoundRadius = mRoundRadius + mBorderWidth / 2;
+        }
+
+        updateShaderMatrix();
+        invalidate();
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         if (getDrawable() == null) {
             return;
         }
         if (type == TYPE_CIRCLE) {
-            //圆形
+            //画主图片
             canvas.drawCircle(getWidth() / 2, getHeight() / 2, mDrawableRadius, mBitmapPaint);
             if (mBorderWidth > 0) {
-                canvas.drawCircle(getWidth() / 2, getHeight() / 2, mBorderRadius, mBorderPaint);
+                //画边框
+                canvas.drawCircle(getWidth() / 2, getHeight() / 2, mAddBorderRadius - mBorderWidth / 2, mBorderPaint);
             }
-        } else {
+        } else if (type == TYPE_ROUND) {
             //圆角
-            canvas.drawRoundRect(roundRectF, mRoundRadius, mRoundRadius, mBitmapPaint);
+            canvas.drawRoundRect(mDrawableRect, mRoundRadius, mRoundRadius, mBitmapPaint);
             if (mBorderWidth > 0) {
-                canvas.drawRoundRect(roundRectF, mRoundRadius, mRoundRadius, mBorderPaint);
+                //画边框
+                canvas.drawRoundRect(mAddBorderRect, mAddBorderRoundRadius, mAddBorderRoundRadius, mBorderPaint);
             }
         }
     }
@@ -126,10 +175,6 @@ public class CircleImageView extends ImageView {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         setup();
-        if (type == TYPE_ROUND) {
-            //圆角
-            roundRectF = new RectF(0, 0, getWidth(), getHeight());
-        }
     }
 
     @Override
@@ -195,42 +240,6 @@ public class CircleImageView extends ImageView {
             return null;
         }
 
-    }
-
-    private void setup() {
-        if (!mReady) {
-            mSetupPending = true;
-            return;
-        }
-        if (mBitmap == null) {
-            return;
-        }
-        mBitmapShader = new BitmapShader(mBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-
-        mBitmapPaint.setAntiAlias(true);
-        mBitmapPaint.setShader(mBitmapShader);
-
-        mBorderPaint.setStyle(Paint.Style.STROKE);
-        mBorderPaint.setAntiAlias(true);
-        mBorderPaint.setColor(mBorderColor);
-        mBorderPaint.setStrokeWidth(mBorderWidth);
-
-        mBitmapHeight = mBitmap.getHeight();
-        mBitmapWidth = mBitmap.getWidth();
-
-        mBorderRect.set(0, 0, getWidth(), getHeight());
-        if (type == TYPE_CIRCLE) {
-            mBorderRadius = Math.min((mBorderRect.height() - mBorderWidth) / 2, (mBorderRect.width() - mBorderWidth) / 2);
-        } else {
-            //圆角设置边框效果不太好
-            mBorderRadius = mRoundRadius - mBorderWidth;
-        }
-
-        mDrawableRect.set(mBorderWidth, mBorderWidth, mBorderRect.width() - mBorderWidth, mBorderRect.height() - mBorderWidth);
-        mDrawableRadius = Math.min(mDrawableRect.height() / 2, mDrawableRect.width() / 2);
-
-        updateShaderMatrix();
-        invalidate();
     }
 
     private void updateShaderMatrix() {

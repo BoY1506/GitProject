@@ -1,10 +1,15 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/type_normal"
+        android:title="普通地图" />
+
+    <item
+        android:id="@+id/type_satellite"
+        android:title="卫星地图" />
+
+    <item
+        android:id="@+id/type_traffic"
+        android:title="实时交通" />
+
 </menu>

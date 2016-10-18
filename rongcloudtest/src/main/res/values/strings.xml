@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RongCloudTest</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="add_contacts">通讯录</string>
+</resources>

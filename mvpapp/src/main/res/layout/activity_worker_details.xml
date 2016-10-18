@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_loading" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/text_16sp"
+                android:padding="24px"
+                android:text="个人信息"
+                android:textSize="54px" />
+
+            <View style="@style/divide_line_hor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/_white"
+                android:orientation="vertical"
+                android:padding="36px">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="18px"
+                    android:paddingRight="18px">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/worker_avatar"
+                        android:layout_width="195px"
+                        android:layout_height="195px"
+                        fresco:failureImage="@mipmap/default_pic"
+                        fresco:failureImageScaleType="centerInside"
+                        fresco:placeholderImage="@mipmap/default_pic"
+                        fresco:placeholderImageScaleType="fitCenter"
+                        fresco:retryImage="@mipmap/default_pic"
+                        fresco:retryImageScaleType="centerCrop"
+                        fresco:roundAsCircle="true" />
+
+                    <TextView
+                        android:id="@+id/worker_name"
+                        style="@style/text_16sp"
+                        android:layout_marginLeft="60px"
+                        android:layout_marginTop="18px"
+                        android:layout_toRightOf="@id/worker_avatar"
+                        android:text="姓名"
+                        android:textSize="48px" />
+
+                    <TextView
+                        android:id="@+id/worker_no"
+                        style="@style/text_16sp"
+                        android:layout_alignBaseline="@id/worker_name"
+                        android:layout_marginLeft="30px"
+                        android:layout_toRightOf="@id/worker_name"
+                        android:text="编号"
+                        android:textSize="42px" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/worker_name"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@id/worker_avatar"
+                        android:orientation="horizontal"
+                        android:paddingBottom="18px">
+
+                        <TextView
+                            android:id="@+id/worker_sex"
+                            style="@style/text_16sp"
+                            android:drawableLeft="@mipmap/worker_sex"
+                            android:drawablePadding="15px"
+                            android:text="性别"
+                            android:textSize="42px" />
+
+                        <TextView
+                            android:id="@+id/worker_age"
+                            style="@style/text_16sp"
+                            android:layout_marginLeft="60px"
+                            android:drawableLeft="@mipmap/worker_age"
+                            android:drawablePadding="15px"
+                            android:text="年龄"
+                            android:textSize="42px" />
+
+                        <TextView
+                            android:id="@+id/worker_location"
+                            style="@style/text_16sp"
+                            android:layout_marginLeft="60px"
+                            android:drawableLeft="@mipmap/team_location"
+                            android:drawablePadding="15px"
+                            android:text="所在地"
+                            android:textSize="42px" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <com.zhou.mvpapp.widget.DashedLine
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginTop="30px" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30px"
+                    android:orientation="horizontal"
+                    android:paddingLeft="18px"
+                    android:paddingRight="18px">
+
+                    <TextView
+                        style="@style/text_16sp"
+                        android:text="技能经验"
+                        android:textSize="42px" />
+
+                    <RatingBar
+                        android:id="@+id/skill_experience_stars"
+                        style="@style/MyRationBarSytle_s"
+                        android:layout_marginLeft="15px"
+                        android:isIndicator="true" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/text_16sp"
+                        android:text="敬业协作"
+                        android:textSize="42px" />
+
+                    <RatingBar
+                        android:id="@+id/devote2work_stars"
+                        style="@style/MyRationBarSytle_s"
+                        android:layout_marginLeft="15px"
+                        android:isIndicator="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30px"
+                    android:orientation="horizontal"
+                    android:paddingLeft="18px"
+                    android:paddingRight="18px">
+
+                    <TextView
+                        style="@style/text_16sp"
+                        android:text="安全意识"
+                        android:textSize="42px" />
+
+                    <RatingBar
+                        android:id="@+id/safety_awareness_stars"
+                        style="@style/MyRationBarSytle_s"
+                        android:layout_marginLeft="15px"
+                        android:isIndicator="true" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/text_16sp"
+                        android:text="履  约  率"
+                        android:textSize="42px" />
+
+                    <RatingBar
+                        android:id="@+id/performance_rate_stars"
+                        style="@style/MyRationBarSytle_s"
+                        android:layout_marginLeft="15px"
+                        android:isIndicator="true" />
+
+                </LinearLayout>
+
+                <com.zhou.mvpapp.widget.DashedLine
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginTop="30px" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="105px"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="18px"
+                    android:paddingRight="18px">
+
+                    <TextView
+                        style="@style/text_16sp"
+                        android:text="综合评分"
+                        android:textSize="42px" />
+
+                    <TextView
+                        android:id="@+id/composite_score"
+                        style="@style/text_16sp"
+                        android:layout_alignParentRight="true"
+                        android:textSize="42px" />
+
+                </RelativeLayout>
+
+                <com.zhou.mvpapp.widget.DashedLine
+                    android:layout_width="match_parent"
+                    android:layout_height="2px" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="105px"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="18px"
+                    android:paddingRight="18px">
+
+                    <TextView
+                        style="@style/text_16sp"
+                        android:text="联系方式"
+                        android:textSize="42px" />
+
+                    <TextView
+                        android:id="@+id/worker_phone"
+                        style="@style/text_16sp"
+                        android:layout_alignParentRight="true"
+                        android:textSize="42px" />
+
+                </RelativeLayout>
+
+                <com.zhou.mvpapp.widget.DashedLine
+                    android:layout_width="match_parent"
+                    android:layout_height="2px" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="105px"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="18px"
+                    android:paddingRight="18px">
+
+                    <TextView
+                        style="@style/text_16sp"
+                        android:text="擅长工种"
+                        android:textSize="42px" />
+
+                    <TextView
+                        android:id="@+id/worker_goodjob"
+                        style="@style/text_16sp"
+                        android:layout_alignParentRight="true"
+                        android:textSize="42px" />
+
+                </RelativeLayout>
+
+                <com.zhou.mvpapp.widget.DashedLine
+                    android:layout_width="match_parent"
+                    android:layout_height="2px" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="105px"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="18px"
+                    android:paddingRight="18px">
+
+                    <TextView
+                        style="@style/text_16sp"
+                        android:text="期望薪资"
+                        android:textSize="42px" />
+
+                    <TextView
+                        android:id="@+id/worker_payrequired"
+                        style="@style/text_16sp"
+                        android:layout_alignParentRight="true"
+                        android:textSize="42px" />
+
+                </RelativeLayout>
+
+                <com.zhou.mvpapp.widget.DashedLine
+                    android:layout_width="match_parent"
+                    android:layout_height="2px" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="105px"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="18px"
+                    android:paddingRight="18px">
+
+                    <TextView
+                        style="@style/text_16sp"
+                        android:text="工作时长"
+                        android:textSize="42px" />
+
+                    <TextView
+                        android:id="@+id/working_hours"
+                        style="@style/text_16sp"
+                        android:layout_alignParentRight="true"
+                        android:textSize="42px" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View style="@style/divide_line_hor" />
+
+            <TextView
+                style="@style/text_16sp"
+                android:padding="24px"
+                android:text="自我描述"
+                android:textSize="54px" />
+
+            <View style="@style/divide_line_hor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/_white"
+                android:orientation="vertical"
+                android:padding="36px">
+
+                <TextView
+                    android:id="@+id/worker_selfdes"
+                    style="@style/text_16sp"
+                    android:paddingLeft="18px"
+                    android:paddingRight="18px"
+                    android:singleLine="false"
+                    android:textSize="42px" />
+
+            </LinearLayout>
+
+            <View style="@style/divide_line_hor" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View style="@style/divide_line_hor" />
+
+</LinearLayout>

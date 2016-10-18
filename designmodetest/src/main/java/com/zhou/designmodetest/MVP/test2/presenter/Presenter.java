@@ -25,20 +25,20 @@ public class Presenter extends BasePresenter<IView> {
         handler = new Handler(Looper.getMainLooper());
     }
 
-//    public void performOnClick() {
-//        //从model中获取数据，在view里显示
-//        mView.showLoading();
-//        iModel.getData(new IModel.ICallback() {
-//            @Override
-//            public void onResult(String data) {
-//                //presenter不仅控制model和view，也可对数据进行进一步加工处理
-//                //view只负责怎么渲染，但presenter可以控制如何渲染
-//                String str = "这个人的名字是：" + data;
-//                mView.setData(str);
-//                mView.hideLoading();
-//            }
-//        });
-//    }
+    public void performOnClick2() {
+        //从model中获取数据，在view里显示
+        mView.showLoading();
+        iModel.getData(new IModel.ICallback() {
+            @Override
+            public void onResult(String data) {
+                //presenter不仅控制model和view，也可对数据进行进一步加工处理
+                //view只负责怎么渲染，但presenter可以控制如何渲染
+                String str = "这个人的名字是：" + data;
+                mView.setData(str);
+                mView.hideLoading();
+            }
+        });
+    }
 
     /**
      * 改进：presenter控制线程操作

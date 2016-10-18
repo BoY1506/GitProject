@@ -9,6 +9,19 @@ import com.zhou.designmodetest.MVP.test2.bean.User;
  */
 public class Model implements IModel {
 
+    /**
+     * 改进：model不处理线程问题
+     */
+    @Override
+    public String getData() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "ZB";
+    }
+
     @Override
     public void getData(final ICallback callback) {
         //模拟网络请求数据
@@ -24,19 +37,6 @@ public class Model implements IModel {
                 }
             }
         }).start();
-    }
-
-    /**
-     * 改进：model不处理线程问题
-     */
-    @Override
-    public String getData() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return "ZB";
     }
 
 }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><!--寻找工人列表item项-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15px">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/_white"
+        app:cardCornerRadius="24px"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="9px"
+        app:contentPadding="30px">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/worker_avatar"
+                android:layout_width="165px"
+                android:layout_height="165px"
+                android:layout_marginLeft="12px"
+                fresco:failureImage="@mipmap/default_pic"
+                fresco:failureImageScaleType="centerInside"
+                fresco:placeholderImage="@mipmap/default_pic"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:retryImage="@mipmap/default_pic"
+                fresco:retryImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="42px"
+                android:layout_toRightOf="@+id/worker_avatar">
+
+                <TextView
+                    android:id="@+id/worker_name"
+                    style="@style/text_16sp"
+                    android:text="姓名"
+                    android:textSize="48px" />
+
+                <TextView
+                    android:id="@+id/worker_no"
+                    style="@style/text_16sp"
+                    android:layout_alignBaseline="@id/worker_name"
+                    android:layout_marginLeft="30px"
+                    android:layout_toRightOf="@id/worker_name"
+                    android:text="编号："
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/worker_location"
+                    style="@style/text_16sp"
+                    android:layout_below="@id/worker_name"
+                    android:layout_marginTop="18px"
+                    android:drawableLeft="@mipmap/worker_location"
+                    android:drawablePadding="18px"
+                    android:text="所在地"
+                    android:textSize="42px" />
+
+                <TextView
+                    android:id="@+id/worker_good_job"
+                    style="@style/text_16sp"
+                    android:layout_alignBaseline="@id/worker_location"
+                    android:layout_marginLeft="60px"
+                    android:layout_toRightOf="@id/worker_location"
+                    android:drawableLeft="@mipmap/worker_goodjob"
+                    android:drawablePadding="18px"
+                    android:text="工种"
+                    android:textSize="42px" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -3,6 +3,10 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <!-- 使用兼容包中的 Material Theme -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <!--返回键样式-->
         <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
     </style>
@@ -50,6 +54,12 @@
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
+    <!--UniversalVideoView-->
+    <style name="Universal.Widget.ProgressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/uvv_progress_rotate</item>
+        <item name="android:indeterminateDuration">1000</item>
+    </style>
+
     <!--横向分隔线样式-->
     <style name="divide_line_hor">
         <item name="android:layout_width">match_parent</item>
@@ -61,7 +71,7 @@
     <style name="divide_line_vel">
         <item name="android:layout_width">0.2dp</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:background">#ffdcdcdc</item>
+        <item name="android:background">#C8C8C8</item>
     </style>
 
 </resources>

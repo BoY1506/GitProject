@@ -1,5 +1,6 @@
 package com.zhou.gitproject.materialdesign;
 
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -10,6 +11,7 @@ import com.zhou.gitproject.BaseActivity;
 import com.zhou.gitproject.R;
 import com.zhou.gitproject.statusbar.utils.StatusBarUtils;
 import com.zhou.gitproject.utils.ActionBarBuilder;
+import com.zhou.gitproject.utils.UIUtils;
 import com.zhou.gitproject.viewpagerload.adapter.MyFragmentPagerAdapter;
 import com.zhou.gitproject.viewpagerload.base.MyLoadFragment;
 import com.zhou.gitproject.viewpagerload.fragment.Load1Fragment1;
@@ -70,6 +72,9 @@ public class TabsLayoutTest extends BaseActivity implements ViewPager.OnPageChan
         pager.setOffscreenPageLimit(2);
         tabs.setupWithViewPager(pager);
         tabs.setTabsFromPagerAdapter(pagerAdapter);
+
+        UIUtils.dp2px(this, 50f);
+
     }
 
     @Override

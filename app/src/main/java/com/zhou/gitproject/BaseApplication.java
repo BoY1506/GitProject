@@ -19,6 +19,7 @@ import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
  */
 public class BaseApplication extends Application {
 
+    //全局context
     private Context context;
 
     @Override
